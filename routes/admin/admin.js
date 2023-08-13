@@ -123,9 +123,14 @@ router.post('/register', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     let { username, password } = req.body;
+    // console.log("req: ", req.body)
 
     let sql = 'SELECT u.*, ur.role_id FROM `sys_user` u LEFT JOIN `sys_user_role` ur ON u.user_id = ur.user_id LEFT JOIN `sys_role` r ON r.role_id = ur.role_id  WHERE username = ? AND password = ?';
-    let [results] = await pool.query(sql, [username, password]);
+    // console.log("sql: ", sql)
+    const connection = await pool.getConnection();
+    // console.log("connection: ", connection)
+    let [results] = await connection.query(sql, [username, password]);
+    // console.log("results: ", results)
     // 检查账户、密码
     if (results.length === 0) {
         res.json({

@@ -4,7 +4,7 @@ const pool = mysql.createPool({
     host: '10.10.108.218',
     user: 'root',
     password: 'root123!',
-    database: 'nodejs_cms',
+    database: 'cmsnode',
     port: 3306
     // debug: true,
 });
