@@ -1,4 +1,4 @@
-FROM node:12-slim
+FROM node:14-slim
 
 ENV TZ=Asia/Shanghai \
     DEBIAN_FRONTEND=noninteractive
