@@ -10,7 +10,7 @@ COPY package*.json ./
 
 RUN npm config set registry https://mirrors.tencent.com/npm/
 
-RUN cnpm i
+RUN npm install
 
 COPY . ./
 
