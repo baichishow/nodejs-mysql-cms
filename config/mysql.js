@@ -1,10 +1,11 @@
 const mysql = require('mysql2/promise');
 // 连接池pool（用于普通查询）
 const pool = mysql.createPool({
-    host: 'localhost',
+    host: '10.10.108.218',
     user: 'root',
     password: 'root123!',
-    database: 'cms',
+    database: 'nodejs_cms',
+    port: 3306
     // debug: true,
 });
 
